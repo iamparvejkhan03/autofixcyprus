@@ -1,4 +1,4 @@
-import { banner } from "../assets";
+import { accidentRepair, banner } from "../assets";
 import { Container } from "./";
 import Marquee from "react-fast-marquee";
 
@@ -18,7 +18,7 @@ const companies = [
 
 function Hero() {
     return (
-        <section className="flex items-center justify-center min-h-screen relative max-w-full overflow-x-hidden pt-28 md:pt-36 pb-5">
+        <section className="flex items-center justify-center min-h-screen relative max-w-full overflow-x-hidden pt-32 md:pt-20 pb-14 md:pb-5">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/15 to-blue-600/3" />
             <Container className="flex flex-col gap-12 lg:gap-20 z-10 w-full h-full">
                 <div className="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-14 w-full">
@@ -70,7 +70,7 @@ function Hero() {
                     </div>
 
                     <div className="w-full lg:w-1/2 h-full lg:h-96 xl:h-120 relative">
-                        <img src={banner} alt="" className="rounded-2xl shadow-2xl w-full h-full object-cover" />
+                        <img src={accidentRepair} alt="" className="rounded-2xl shadow-2xl shadow-blue-200 w-full h-full object-cover" />
 
                         <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg flex gap-4">
                             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">

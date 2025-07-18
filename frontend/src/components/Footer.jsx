@@ -5,6 +5,7 @@ const quickLinks = [
     { name: 'Home', href: '/' },
     { name: 'Request Repair', href: '/request-repair' },
     { name: 'Contact', href: '/contact' },
+    { name: 'FAQs', href: '/faqs' },
 ];
 
 const ourServices = ['Accident Repair', 'Body Work & Paint', 'Free Pickup & Delivery', 'Insurance Support', 'Damage Assessment'];

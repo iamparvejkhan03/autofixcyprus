@@ -11,6 +11,7 @@ import qualityGuarantee from './qualityGuarantee.jpg';
 import beforeAfterCarRepair from './beforeAfterCarRepair.jpg';
 import sidePanel from './sidePanel.jpg';
 import Restoration from './Restoration.jpg';
+import whyChooseUs from './whyChooseUs.jpg';
 
 export {
     banner,
@@ -26,4 +27,5 @@ export {
     beforeAfterCarRepair,
     sidePanel,
     Restoration,
+    whyChooseUs,
 }

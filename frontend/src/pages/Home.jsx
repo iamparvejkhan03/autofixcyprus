@@ -57,24 +57,24 @@ const testimonials = [
 
 const faqs = [
     {
-        question: '❓ Do you work with my insurance company?',
-        answer: `✔ Yes! We work with all insurance providers.
-        We handle all communication and paperwork, so you don’t have to lift a finger.`
+        question: '❓ I had an accident. What should I do?',
+        answer: `📞 Call us or send us a photo. From there, we handle everything.`
     },
     {
-        question: '❓ How long will the repairs take?',
-        answer: `Repair time depends on the extent of the damage.
-        We’ll keep you informed at every step so you always know when to expect your car back.`
+        question: '❓ What do you offer?',
+        answer: `We take care of the entire process: towing, insurance, repair, and returning your car ready at your doorstep.`
     },
     {
-        question: '❓ How much does it cost?',
-        answer: `The initial assessment and pickup are completely free.
-        The final cost depends on the damage and whether it’s covered by your insurance.`
+        question: '❓ Can I get a replacement car?',
+        answer: `Yes. We provide a replacement car for an additional fee if you need it.`
     },
     {
-        question: '❓ Still have questions?',
-        answer: `Can’t find the answer you’re looking for? Get in touch with us!
-        📞 Phone: +357 XXX XXX XXX`
+        question: '❓ If it was my fault, can I still call you?',
+        answer: `Of course. Whether you're at fault or not, we will fully assist you.`
+    },
+    {
+        question: '❓ Do I pay anything upfront?',
+        answer: `No. The initial consultation and damage assessment are completely free.`
     },
 ];
 
@@ -195,7 +195,7 @@ const howItWorks = [
 
 function Home() {
     return (
-        <>
+        <main>
             <Hero />
             {/* Stats section */}
             <section className="bg-blue-600 p-5 md:p-10 mx-5 my-12 md:mx-16 lg:mx-24 xl:mx-28 rounded-xl text-center text-white">
@@ -333,7 +333,7 @@ function Home() {
             </section>
 
             <CallToAction />
-        </>
+        </main>
     );
 }
 

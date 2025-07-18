@@ -10,7 +10,8 @@ import HowItWorks from "./HowItWorks";
 import OurServices from "./OurServices";
 import TrustedInsurancePartners from "./TrustedInsurancePartners";
 import WhyChooseUs from "./WhyChooseUs";
-
+import FileUpload from "./FileUpload";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export {
     Header,
@@ -25,4 +26,6 @@ export {
     OurServices,
     TrustedInsurancePartners,
     WhyChooseUs,
+    FileUpload,
+    LanguageSwitcher,
 }

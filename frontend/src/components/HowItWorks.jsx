@@ -1,11 +1,7 @@
 function HowItWorks({title, description, icon}) {
     return (
-        <div className="rounded-lg relative group hover:shadow-xl transition-all duration-300 border border-blue-100 shadow-lg shadow-blue-100 bg-white text-card-foreground">
-            <div className="p-8 text-center">
-
-                {/* <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">01</div>
-                </div> */}
+        <div className="rounded-lg relative group hover:shadow-xl transition-all duration-300 border border-blue-100 shadow-lg shadow-blue-100 bg-white text-card-foreground min-h-64 md:min-h-86 lg:min-h-72">
+            <div className="p-5 text-center">
 
                 <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-6 mx-auto group-hover:bg-blue-600 transition-colors duration-300 mt-4">
                     {icon}

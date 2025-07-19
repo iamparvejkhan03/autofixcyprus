@@ -1,41 +1,57 @@
 import { useState } from "react";
 import { accidentRepair, expertTeam, insuranceClaims, qualityGuarantee, rentalCar } from "../assets";
 import { carTow } from "../assets";
+import { useSelector } from "react-redux";
 
-function OurServices(){
+function OurServices() {
     const [stopScroll, setStopScroll] = useState(false);
+    const language = useSelector(state => state.language);
+
     const cardData = [
         {
-            title: "Accident Repair",
+            title: `${language === 'en' ? 'Accident Repair' : 'Επισκευή Ατυχήματος'}`,
             image: accidentRepair,
-            description:'Professional bodywork, dent repair, and paint restoration to get your car looking like new.'
+            description: `${language === 'en'
+                ? 'Professional bodywork, dent repair, and paint restoration to get your car looking like new.'
+                : 'Επαγγελματική φανοποιία, επισκευή βαθουλωμάτων και αποκατάσταση βαφής για να δείχνει το αυτοκίνητό σας σαν καινούργιο.'}`
         },
         {
-            title: "Insurance Claims",
+            title: `${language === 'en' ? 'Insurance Claims' : 'Ασφαλιστικών Απαιτήσεων'}`,
             image: insuranceClaims,
-            description:'We hanlde all insurance paperwork and communication to make the process stress-free for you.'
+            description: `${language === 'en'
+                ? 'We handle all insurance paperwork and communication to make the process stress-free for you.'
+                : 'Αναλαμβάνουμε όλη τη γραφειοκρατία και την επικοινωνία με την ασφαλιστική για να κάνουμε τη διαδικασία όσο το δυνατόν πιο ανώδυνη για εσάς.'}`
         },
         {
-            title: "Pickup & Delivery",
+            title: `${language === 'en' ? 'Pickup & Delivery' : 'Παραλαβή & Παράδοση'}`,
             image: carTow,
-            description:'Free car collection from your location and delivery when the repair is complete.'
+            description: `${language === 'en'
+                ? 'Free car collection from your location and delivery when the repair is complete.'
+                : 'Δωρεάν παραλαβή του αυτοκινήτου από τον χώρο σας και παράδοση μετά την ολοκλήρωση της επισκευής.'}`
         },
         {
-            title: "Rental Car Service",
+            title: `${language === 'en' ? 'Car Replacement' : 'Αντικατάστασης Αυτοκινήτου'}`,
             image: rentalCar,
-            description:'Get a replacement vehicle while your car is being repaired so you can continue your daily routine.'
+            description: `${language === 'en'
+                ? 'Get a replacement vehicle while your car is being repaired so you can continue your daily routine.'
+                : 'Παρέχουμε όχημα αντικατάστασης κατά τη διάρκεια της επισκευής ώστε να συνεχίσετε κανονικά την καθημερινότητά σας.'}`
         },
         {
-            title: "Expert Team",
+            title: `${language === 'en' ? 'Expert Team' : 'Έμπειρη Ομάδα'}`,
             image: expertTeam,
-            description:'Certified technicians with years of experience in accident and collision repair.'
+            description: `${language === 'en'
+                ? 'Certified technicians with years of experience in accident and collision repair.'
+                : 'Πιστοποιημένοι τεχνικοί με πολυετή εμπειρία σε επισκευές ατυχημάτων και συγκρούσεων.'}`
         },
         {
-            title: "Quality Guarantee",
+            title: `${language === 'en' ? 'Quality Guarantee' : 'Εγγύηση Ποιότητας'}`,
             image: qualityGuarantee,
-            description:'All repair come with our quality guarantee for your peace of mind.'
-        },
+            description: `${language === 'en'
+                ? 'All repairs come with our quality guarantee for your peace of mind.'
+                : 'Όλες οι επισκευές συνοδεύονται από εγγύηση ποιότητας για τη δική σας σιγουριά.'}`
+        }
     ];
+
 
     return (
         <>
@@ -56,7 +72,7 @@ function OurServices(){
             `}</style>
 
             <div className="overflow-hidden w-full relative max-w-full mx-auto mt-8" onMouseEnter={() => setStopScroll(true)} onMouseLeave={() => setStopScroll(false)}>
-                <div className="absolute left-0 top-0 h-full w-20 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
+                <div className="absolute left-0 top-0 h-full w-5 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
                 <div className="marquee-inner flex w-fit" style={{ animationPlayState: stopScroll ? "paused" : "running", animationDuration: cardData.length * 5000 + "ms" }}>
                     <div className="flex">
                         {[...cardData, ...cardData].map((card, index) => (
@@ -67,14 +83,14 @@ function OurServices(){
 
                                 <img src={card.image} alt="card" className="w-full h-full object-cover " />
 
-                                <div className="flex flex-col items-center justify-center px-4 opacity-0 group-hover:opacity-100 transition-all duration-300 absolute bottom-0 backdrop-blur-md left-0 w-full h-full bg-black/20">
+                                <div className="flex flex-col items-center justify-center px-4 opacity-0 group-active::opacity-100 group-hover:opacity-100 transition-all duration-300 absolute bottom-0 backdrop-blur-md left-0 w-full h-full bg-black/20">
                                     <p className="text-white text-center">{card.description}</p>
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
-                <div className="absolute right-0 top-0 h-full w-20 md:w-40 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
+                <div className="absolute right-0 top-0 h-full w-5 md:w-5 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />
             </div>
         </>
     );

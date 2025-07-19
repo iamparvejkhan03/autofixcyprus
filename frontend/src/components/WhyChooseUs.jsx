@@ -1,11 +1,16 @@
+import { useSelector } from "react-redux";
 import { whyChooseUs } from "../assets";
 
 function WhyChooseUs() {
+    const language = useSelector(state => state.language);
+
     return (
         <section>
             <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 className="text-4xl font-bold text-gray-900 mb-6">Why Choose AutoFix Cyprus?</h2>
+                    <h2 className="text-4xl font-bold text-gray-900 mb-6">
+                        {language === 'en' ? 'Why Choose AutoFix Cyprus?' : 'Γιατί να επιλέξετε το AutoFix Cyprus;'}
+                    </h2>
                     {/* <p className="text-xl text-gray-600 mb-8 leading-relaxed">We're not just another repair shop. We're your personal car care specialists, committed to making the repair process as smooth and stress-free as possible.</p> */}
                     <div className="space-y-6">
                         <div className="flex items-start gap-4">
@@ -16,8 +21,12 @@ function WhyChooseUs() {
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">No Hidden Fees</h3>
-                                <p className="text-gray-600">Transparent pricing with detailed quotes before any work begins. What we quote is what you pay.</p>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                    {language === 'en' ? 'No Hidden Charges' : 'Χωρίς Κρυφές Χρεώσεις'}
+                                </h3>
+                                <p className="text-gray-600">
+                                    {language === 'en' ? 'Transparent pricing with detailed quotes before any work begins. What we quote is what you pay.' : 'Διαφανής τιμολόγηση με αναλυτική προσφορά πριν ξεκινήσει οποιαδήποτε εργασία. Αυτό που σας λέμε, αυτό πληρώνετε.'}
+                                </p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -28,8 +37,12 @@ function WhyChooseUs() {
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Expert Craftsmen</h3>
-                                <p className="text-gray-600">Certified technicians with years of experience in accident repair, insurance claims, and bodywork restoration.</p>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                    {language === 'en' ? 'Expert Craftsmen' : 'Εξειδικευμένοι Τεχνίτες'}
+                                </h3>
+                                <p className="text-gray-600">
+                                    {language === 'en' ? 'Certified technicians with years of experience in accident repair, insurance claims, and bodywork restoration.' : 'Πιστοποιημένοι τεχνικοί με πολυετή εμπειρία σε επισκευές ατυχημάτων, ασφαλιστικές απαιτήσεις και αποκατάσταση αμαξώματος.'}
+                                </p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -40,8 +53,12 @@ function WhyChooseUs() {
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Fast Turnaround</h3>
-                                <p className="text-gray-600">Most repairs completed within 3-5 business days, with emergency services available when needed.</p>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                    {language === 'en' ? 'Fast Service' : 'Γρήγορη Εξυπηρέτηση'}
+                                </h3>
+                                <p className="text-gray-600">
+                                    {language === 'en' ? 'Most repairs completed within 3-5 business days, with emergency services available when needed.' : 'Οι περισσότερες επισκευές ολοκληρώνονται μέσα σε 3–5 εργάσιμες ημέρες, με δυνατότητα άμεσης εξυπηρέτησης σε επείγουσες περιπτώσεις.'}
+                                </p>
                             </div>
                         </div>
                         <div className="flex items-start gap-4">
@@ -54,8 +71,12 @@ function WhyChooseUs() {
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Personal Service</h3>
-                                <p className="text-gray-600">Direct communication with the team throughout the process - no call centers or automated responses.</p>
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                                    {language === 'en' ? 'Personal Service' : 'Προσωπική Εξυπηρέτηση'}
+                                </h3>
+                                <p className="text-gray-600">
+                                    {language === 'en' ? 'Direct communication with the team throughout the process - no call centers or automated responses.' : 'Άμεση επικοινωνία με την ομάδα καθ’ όλη τη διάρκεια της διαδικασίας – χωρίς τηλεφωνικά κέντρα ή αυτοματοποιημένες απαντήσεις.'}
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -65,7 +86,9 @@ function WhyChooseUs() {
                         <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-blue-600">500+</div>
-                                <div className="text-sm text-gray-500">Cars Repaired</div>
+                                <div className="text-sm text-gray-500">
+                                    {language === 'en' ? 'Cars Repaired' : 'Αυτοκίνητα Επισκευάστηκαν'}
+                                </div>
                             </div>
                         </div>
                 </div>

@@ -1,8 +1,11 @@
 import { useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 const FileUpload = ({ name, register, setValue, watch, errors }) => {
   const fileInputRef = useRef(null);
   const files = watch(name, []);
+
+  const language = useSelector(state => state.language);
 
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
@@ -23,13 +26,13 @@ const FileUpload = ({ name, register, setValue, watch, errors }) => {
   };
 
   return (
-    <div 
+    <div
       className="rounded-lg border-2 border-dashed border-gray-300 hover:border-blue-400 p-6 text-center transition-colors"
       onDragOver={(e) => e.preventDefault()}
       onDrop={handleDrop}
     >
       <input
-        {...register(name, { required: "Please upload at least one photo" })}
+        {...register(name, { required: `${language === 'en' ? 'Please upload at least one photo' : 'Παρακαλώ ανεβάστε τουλάχιστον μία φωτογραφία'}` })}
         type="file"
         ref={fileInputRef}
         multiple
@@ -37,7 +40,7 @@ const FileUpload = ({ name, register, setValue, watch, errors }) => {
         className="hidden"
         onChange={handleFileChange}
       />
-      
+
       {/* Rest of your FileUpload component UI */}
       <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-camera w-8 h-8 text-blue-600">
@@ -45,31 +48,35 @@ const FileUpload = ({ name, register, setValue, watch, errors }) => {
           <circle cx="12" cy="13" r="3"></circle>
         </svg>
       </div>
-      
+
       <h4 className="text-lg font-semibold text-gray-900 mb-2">
-        Drop photos here or click to upload
+        {language === 'en' ? 'Drop photos here or click to upload' : 'Σύρετε τις φωτογραφίες εδώ ή κάντε κλικ για να ανεβάσετε'}
       </h4>
-      
-      <p className="text-gray-600 mb-4">Supported formats: JPG, PNG, HEIC (Max 10MB each)</p>
-      
+
+      <p className="text-gray-600 mb-4">
+        {language === 'en' ? 'Supported formats: JPG, PNG, HEIC (Max 10MB each)' : 'Υποστηριζόμενες μορφές: JPG, PNG, HEIC (Μέγιστο 10MB η καθεμία)'}
+      </p>
+
       <button
         type="button"
         onClick={() => fileInputRef.current.click()}
         className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background h-10 px-4 py-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white cursor-pointer"
       >
-        Choose Files
+        {language === 'en' ? 'Choose Files' : 'Επιλέξτε αρχεία'}
       </button>
-      
+
       {/* File previews */}
       {files.length > 0 && (
         <div className="mt-6">
-          <h5 className="text-sm font-medium text-gray-700 mb-2">Selected files ({files.length}/6):</h5>
+          <h5 className="text-sm font-medium text-gray-700 mb-2">
+            {language === 'en' ? 'Selected files' : 'Επιλεγμένα αρχεία'}
+            ({files.length}/6):</h5>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {files.map((file, index) => (
               <div key={index} className="relative group">
                 <div className="h-20 w-full lg:h-32 lg:w-52 bg-gray-100 rounded-md overflow-hidden">
-                  <img 
-                    src={URL.createObjectURL(file)} 
+                  <img
+                    src={URL.createObjectURL(file)}
                     alt={`Preview ${index}`}
                     className="w-full h-full object-cover"
                   />

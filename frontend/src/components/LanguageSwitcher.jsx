@@ -6,7 +6,6 @@ import { changeLanguage } from '../features/languageSlice.js';
 function LanguageSwitcher({ className }) {
     const language = useSelector(state => state.language);
     const dispatch = useDispatch();
-    console.log(language);
     return (
         <div className={className}>
             <div className="flex gap-8">
@@ -23,12 +22,12 @@ function LanguageSwitcher({ className }) {
                                 className="w-8 h-8 sm:w-5 sm:h-5 rounded-full object-cover border border-blue-300"
                             />
                         }
-                        <span className='hidden sm:block'>{language === 'en' ? 'English' : 'Greek'}</span>
+                        <span className='hidden sm:block'>{language === 'en' ? 'English' : 'Ελληνικά'}</span>
                     </PopoverButton>
                     <PopoverPanel>
                         {({ close }) => (
                             <div
-                                className="w-32 rounded-xl bg-white border border-blue-100 text-sm/6 shadow-[5px_5px_5px_rgba(219,234,254,1),_-5px_-5px_5px_rgba(219,234,254,1)] absolute z-40 mt-2"
+                                className="w-32 rounded-xl bg-white border border-blue-100 text-sm/6 shadow-[5px_5px_5px_rgba(219,234,254,1),_-5px_-5px_5px_rgba(219,234,254,1)] absolute right-0 translate-x-1/3 sm:left-0 sm:translate-x-0 z-40 mt-2"
                             >
                                 <div className="p-3 flex flex-col gap-2">
                                     <button

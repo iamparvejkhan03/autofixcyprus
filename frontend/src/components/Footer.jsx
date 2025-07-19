@@ -1,16 +1,26 @@
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
+import { useSelector } from "react-redux";
 
-const quickLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Request Repair', href: '/request-repair' },
-    { name: 'Contact', href: '/contact' },
-    { name: 'FAQs', href: '/faqs' },
-];
-
-const ourServices = ['Accident Repair', 'Body Work & Paint', 'Free Pickup & Delivery', 'Insurance Support', 'Damage Assessment'];
 
 function Footer() {
+    const language = useSelector(state => state.language);
+
+    const quickLinks = [
+        { name: `${language === 'en' ? 'Home' : 'Αρχική'}`, href: '/' },
+        { name: `${language === 'en' ? 'Request Repair' : 'Αίτημα Επισκευής'}`, href: '/request-repair' },
+        { name: `${language === 'en' ? 'Contact' : 'Επικοινωνία'}`, href: '/contact' },
+        { name: `${language === 'en' ? 'FAQs' : 'Συχνές Ερωτήσεις'}`, href: '/faqs' },
+    ];
+
+    const ourServices = [
+        `${language === 'en' ? 'Accident Repair' : 'Επισκευή Ατυχήματος'}`,
+        `${language === 'en' ? 'Body Work & Paint' : 'Φανοποιία & Βαφή'}`,
+        `${language === 'en' ? 'Free Pickup & Delivery' : 'Δωρεάν Παραλαβή & Παράδοση'}`,
+        `${language === 'en' ? 'Insurance Support' : 'Υποστήριξη Ασφαλιστικών'}`,
+        `${language === 'en' ? 'Damage Assessment' : 'Εκτίμηση Ζημιάς'}`
+    ];
+
     return (
         <footer className="bg-gray-900 text-gray-200 font-light py-12">
             <Container className=' px-6 md:px-16 lg:px-24 xl:px-32'>
@@ -21,12 +31,81 @@ function Footer() {
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-car w-4 h-4 sm:w-5 sm:h-5 text-white" data-lov-id="src/components/Navbar.tsx:25:14" data-lov-name="Car" data-component-path="src/components/Navbar.tsx" data-component-line="25" data-component-file="Navbar.tsx" data-component-name="Car" data-component-content="%7B%22className%22%3A%22w-5%20h-5%20text-white%22%7D"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
                             </div>
 
-                            <h2 className="text-lg lg:text-2xl font-bold">AutoFix Cyprus</h2>
+                            <h2 className="text-lg lg:text-2xl font-bold">
+                                AutoFix Cyprus
+                            </h2>
                         </Link>
                         <p className=''>
-                            Professional car repair services across Cyprus. We handle everything from accident damage to bodywork restoration with personal attention to detail.
+                            {language === 'en' ? 'Professional car repair services across Cyprus. We handle everything from accident damage to bodywork restoration with personal attention to detail.' : 'Επαγγελματικές υπηρεσίες επισκευής αυτοκινήτων σε όλη την Κύπρο. Αναλαμβάνουμε τα πάντα, από ζημιές λόγω ατυχήματος μέχρι αποκατάσταση αμαξώματος, με προσωπική προσοχή στη λεπτομέρεια.'}
                         </p>
-                        <div className='flex items-center gap-3 mt-4'>
+                    </div>
+
+                    <div>
+                        <p className='text-lg text-gray-200 font-semibold'>
+                            {language === 'en' ? 'Quick Links' : 'Γρήγοροι Σύνδεσμοι'}
+                        </p>
+                        <ul className='mt-3 flex flex-col gap-2 '>
+                            {
+                                quickLinks.map(link => (
+                                    <li className="relative py-1" key={link.name}>
+                                        <NavLink className={({ isActive }) => `${isActive ? 'text-blue-600 after:bg-blue-600' : 'text-white after:bg-white'}`} to={link.href}>{link.name}</NavLink>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p className='text-lg text-gray-200 font-semibold'>
+                            {language === 'en' ? 'Our Services' : 'Οι Υπηρεσίες μας'}
+                        </p>
+                        <ul className='mt-3 flex flex-col gap-2 '>
+                            {
+                                ourServices.map(service => (
+                                    <li key={service}>
+                                        <Link to='/request-repair'>{service}</Link>
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <div className='max-w-80'>
+                        <p className='text-lg text-gray-200 font-semibold'>
+                            {language === 'en' ? 'Contact Info' : 'Στοιχεία Επικοινωνίας'}
+                        </p>
+                        <ul className='mt-3 flex flex-col gap-2'>
+                            <li className="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone w-4 h-4" data-lov-id="src/components/Footer.tsx:57:16" data-lov-name="Phone" data-component-path="src/components/Footer.tsx" data-component-line="57" data-component-file="Footer.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+
+                                <Link className="hover:underline" to='tel:+35799777281'>+357 99 777281</Link>
+                            </li>
+
+                            <li className="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail w-4 h-4" data-lov-id="src/components/Footer.tsx:61:16" data-lov-name="Mail" data-component-path="src/components/Footer.tsx" data-component-line="61" data-component-file="Footer.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+
+                                <Link className="hover:underline" to='mailto:support@autofixcyprus.com'>support@autofixcyprus.com</Link>
+                            </li>
+
+                            <li className="flex items-center gap-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin w-4 h-4" data-lov-id="src/components/Footer.tsx:65:16" data-lov-name="MapPin" data-component-path="src/components/Footer.tsx" data-component-line="65" data-component-file="Footer.tsx" data-component-name="MapPin" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+
+                                <p>
+                                    {language === 'en' ? 'Serving all over Cyprus' : 'Εξυπηρετούμε σε όλη την Κύπρο'}
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr className='border-gray-300 mt-8' />
+                <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
+                    <p>© {new Date().getFullYear()} 
+                        <Link to="/">
+                        AutoFix Cyprus
+                        </Link>. 
+                        {language === 'en' ? 'All rights reserved.' : 'Όλα τα δικαιώματα διατηρούνται.'}
+                    </p>
+                    <div className='flex items-center gap-3 mt-4'>
                             {/* Instagram */}
                             <Link to="/">
                                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -52,66 +131,6 @@ function Footer() {
                                 </svg>
                             </Link>
                         </div>
-                    </div>
-
-                    <div>
-                        <p className='text-lg text-gray-200 font-semibold'>Quick Links</p>
-                        <ul className='mt-3 flex flex-col gap-2 '>
-                            {
-                                quickLinks.map(link => (
-                                    <li className="relative py-1" key={link.name}>
-                                        <NavLink className={({ isActive }) => `${isActive ? 'text-blue-600 after:bg-blue-600' : 'text-white after:bg-white'}`} to={link.href}>{link.name}</NavLink>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-
-                    <div>
-                        <p className='text-lg text-gray-200 font-semibold'>Our Services</p>
-                        <ul className='mt-3 flex flex-col gap-2 '>
-                            {
-                                ourServices.map(service => (
-                                    <li key={service}>
-                                        <Link to='/request-repair'>{service}</Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
-
-                    <div className='max-w-80'>
-                        <p className='text-lg text-gray-200 font-semibold'>Contact Info</p>
-                        <ul className='mt-3 flex flex-col gap-2'>
-                            <li className="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone w-4 h-4" data-lov-id="src/components/Footer.tsx:57:16" data-lov-name="Phone" data-component-path="src/components/Footer.tsx" data-component-line="57" data-component-file="Footer.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-
-                                <Link className="hover:underline" to='tel:+35799123785'>+357 99 123785</Link>
-                            </li>
-
-                            <li className="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-mail w-4 h-4" data-lov-id="src/components/Footer.tsx:61:16" data-lov-name="Mail" data-component-path="src/components/Footer.tsx" data-component-line="61" data-component-file="Footer.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
-
-                                <Link className="hover:underline" to='mailto:support@autofixcyprus.com'>support@autofixcyprus.com</Link>
-                            </li>
-
-                            <li className="flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin w-4 h-4" data-lov-id="src/components/Footer.tsx:65:16" data-lov-name="MapPin" data-component-path="src/components/Footer.tsx" data-component-line="65" data-component-file="Footer.tsx" data-component-name="MapPin" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
-
-                                <p>Serving all over Cyprus</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <hr className='border-gray-300 mt-8' />
-                <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                    <p>© {new Date().getFullYear()} <Link to="/">AutoFix Cyprus</Link>. All rights reserved.</p>
-                    <ul className='flex items-center gap-4'>
-                        <li>
-                            <Link to="/">Privacy</Link>
-                        </li>
-                        <li><Link to="/">Terms</Link></li>
-                    </ul>
                 </div>
             </Container>
         </footer>

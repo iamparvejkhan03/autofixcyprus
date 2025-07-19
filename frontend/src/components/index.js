@@ -12,6 +12,8 @@ import TrustedInsurancePartners from "./TrustedInsurancePartners";
 import WhyChooseUs from "./WhyChooseUs";
 import FileUpload from "./FileUpload";
 import LanguageSwitcher from "./LanguageSwitcher";
+import ScrollToTop from "./ScrollToTop";
+import ScrollToTopIcon from "./ScrollToTopIcon";
 
 export {
     Header,
@@ -28,4 +30,6 @@ export {
     WhyChooseUs,
     FileUpload,
     LanguageSwitcher,
+    ScrollToTop,
+    ScrollToTopIcon,
 }

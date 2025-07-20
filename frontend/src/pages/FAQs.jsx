@@ -8,52 +8,52 @@ function FAQs() {
 
     const faqs = [
     {
-        question: `${language === 'en' ? '❓ What should I do if I’ve had an accident?' : '❓ Τι πρέπει να κάνω αν έχω ένα ατύχημα;'}`,
+        question: `${language === 'en' ? 'What should I do if I’ve had an accident?' : 'Τι πρέπει να κάνω αν έχω ένα ατύχημα;'}`,
         answer: `${language === 'en'
-            ? '✔ Call AutoFix Cyprus immediately.\n✔ Do not hand your car over to anyone at the accident scene.\n✔ We’ll come, pick it up, and take care of everything for you.'
-            : '✔ Καλέστε αμέσως την AutoFix Cyprus.\n✔ Μην παραδώσετε το αυτοκίνητό σας σε κανέναν στο σημείο του ατυχήματος.\n✔ Εμείς θα έρθουμε, θα το παραλάβουμε και θα αναλάβουμε τα πάντα για εσάς.'}`
+            ? 'Call AutoFix Cyprus immediately. Do not hand your car over to anyone at the accident scene. We’ll come, pick it up, and take care of everything for you.'
+            : 'Καλέστε αμέσως την AutoFix Cyprus. Μην παραδώσετε το αυτοκίνητό σας σε κανέναν στο σημείο του ατυχήματος. Εμείς θα έρθουμε, θα το παραλάβουμε και θα αναλάβουμε τα πάντα για εσάς.'}`
     },
     {
-        question: `${language === 'en' ? '❓ If the damage is minor, should I still contact you?' : '❓ Αν η ζημιά είναι μικρή, πρέπει να σας καλέσω;'}`,
+        question: `${language === 'en' ? 'If the damage is minor, should I still contact you?' : 'Αν η ζημιά είναι μικρή, πρέπει να σας καλέσω;'}`,
         answer: `${language === 'en'
-            ? 'Yes!\nEven a small scratch or dent could be hiding deeper issues.\nWith AutoFix Cyprus, you get a full inspection and professional repair — no hidden costs.'
-            : 'Ναι!\nΑκόμα και ένα μικρό χτύπημα μπορεί να κρύβει βαθύτερα προβλήματα.\nΜε την AutoFix Cyprus, λαμβάνετε πλήρη έλεγχο και επαγγελματική επισκευή — χωρίς κρυφές χρεώσεις.'}`
+            ? 'Yes! Even a small scratch or dent could be hiding deeper issues. With AutoFix Cyprus, you get a full inspection and professional repair — no hidden costs.'
+            : 'Ναι! Ακόμα και ένα μικρό χτύπημα μπορεί να κρύβει βαθύτερα προβλήματα. Με την AutoFix Cyprus, λαμβάνετε πλήρη έλεγχο και επαγγελματική επισκευή — χωρίς κρυφές χρεώσεις.'}`
     },
     {
-        question: `${language === 'en' ? '❓ Do you work with my insurance company?' : '❓ Συνεργάζεστε με την ασφαλιστική μου εταιρεία;'}`,
+        question: `${language === 'en' ? 'Do you work with my insurance company?' : 'Συνεργάζεστε με την ασφαλιστική μου εταιρεία;'}`,
         answer: `${language === 'en'
-            ? '✔ Yes! We work with all insurance providers.\nWe handle all communication and paperwork, so you don’t have to lift a finger.'
-            : '✔ Ναι! Συνεργαζόμαστε με όλες τις ασφαλιστικές εταιρείες.\nΑναλαμβάνουμε όλη την επικοινωνία και τα έγγραφα, ώστε να μην κάνετε τίποτα.'}`
+            ? 'Yes! We work with all insurance providers. We handle all communication and paperwork, so you don’t have to lift a finger.'
+            : 'Ναι! Συνεργαζόμαστε με όλες τις ασφαλιστικές εταιρείες. Αναλαμβάνουμε όλη την επικοινωνία και τα έγγραφα, ώστε να μην κάνετε τίποτα.'}`
     },
     {
-        question: `${language === 'en' ? '❓ How will I get home after dropping off my car?' : '❓ Πώς θα επιστρέψω στο σπίτι αφού αφήσω το αυτοκίνητο;'}`,
+        question: `${language === 'en' ? 'How will I get home after dropping off my car?' : 'Πώς θα επιστρέψω στο σπίτι αφού αφήσω το αυτοκίνητο;'}`,
         answer: `${language === 'en'
             ? 'We’ll arrange transportation for you — or if needed, provide you with a rental car so your day goes on stress-free.'
             : 'Θα κανονίσουμε μεταφορά για εσάς — ή αν χρειαστεί, θα σας παρέχουμε αυτοκίνητο αντικατάστασης για να συνεχίσετε τη μέρα σας χωρίς άγχος.'}`
     },
     {
-        question: `${language === 'en' ? '❓ Where will the repairs take place?' : '❓ Πού θα γίνουν οι επισκευές;'}`,
+        question: `${language === 'en' ? 'Where will the repairs take place?' : 'Πού θα γίνουν οι επισκευές;'}`,
         answer: `${language === 'en'
             ? 'Your vehicle will be repaired at certified workshops under the full supervision of AutoFix Cyprus, with a quality guarantee.'
             : 'Το όχημά σας θα επισκευαστεί σε πιστοποιημένα συνεργεία υπό την πλήρη επίβλεψη της AutoFix Cyprus, με εγγύηση ποιότητας.'}`
     },
     {
-        question: `${language === 'en' ? '❓ How long will the repairs take?' : '❓ Πόσο θα διαρκέσουν οι επισκευές;'}`,
+        question: `${language === 'en' ? 'How long will the repairs take?' : 'Πόσο θα διαρκέσουν οι επισκευές;'}`,
         answer: `${language === 'en'
-            ? 'Repair time depends on the extent of the damage.\nWe’ll keep you informed at every step so you always know when to expect your car back.'
-            : 'Ο χρόνος επισκευής εξαρτάται από την έκταση της ζημιάς.\nΘα σας ενημερώνουμε σε κάθε στάδιο ώστε να γνωρίζετε πότε να περιμένετε το όχημά σας πίσω.'}`
+            ? 'Repair time depends on the extent of the damage. We’ll keep you informed at every step so you always know when to expect your car back.'
+            : 'Ο χρόνος επισκευής εξαρτάται από την έκταση της ζημιάς. Θα σας ενημερώνουμε σε κάθε στάδιο ώστε να γνωρίζετε πότε να περιμένετε το όχημά σας πίσω.'}`
     },
     {
-        question: `${language === 'en' ? '❓ How much does it cost?' : '❓ Πόσο κοστίζει;'}`,
+        question: `${language === 'en' ? 'How much does it cost?' : 'Πόσο κοστίζει;'}`,
         answer: `${language === 'en'
-            ? 'The initial assessment and pickup are completely free.\nThe final cost depends on the damage and whether it’s covered by your insurance.'
-            : 'Η αρχική αξιολόγηση και η παραλαβή είναι εντελώς δωρεάν.\nΤο τελικό κόστος εξαρτάται από τη ζημιά και αν καλύπτεται από την ασφάλειά σας.'}`
+            ? 'The initial assessment and pickup are completely free. The final cost depends on the damage and whether it’s covered by your insurance.'
+            : 'Η αρχική αξιολόγηση και η παραλαβή είναι εντελώς δωρεάν. Το τελικό κόστος εξαρτάται από τη ζημιά και αν καλύπτεται από την ασφάλειά σας.'}`
     },
     {
-        question: `${language === 'en' ? '❓ What if the damage was my fault?' : '❓ Τι γίνεται αν έφταιγα εγώ για τη ζημιά;'}`,
+        question: `${language === 'en' ? 'What if the damage was my fault?' : 'Τι γίνεται αν έφταιγα εγώ για τη ζημιά;'}`,
         answer: `${language === 'en'
-            ? '✔ Absolutely — you can still call us!\nWhether it was an accident, self-inflicted damage, or regular wear and tear — we’re here to handle it.'
-            : '✔ Φυσικά — μπορείτε να μας καλέσετε!\nΕίτε πρόκειται για ατύχημα, είτε για προσωπική απροσεξία ή φθορά — είμαστε εδώ για να το αναλάβουμε.'}`
+            ? 'Absolutely — you can still call us! Whether it was an accident, self-inflicted damage, or regular wear and tear — we’re here to handle it.'
+            : 'Φυσικά — μπορείτε να μας καλέσετε! Είτε πρόκειται για ατύχημα, είτε για προσωπική απροσεξία ή φθορά — είμαστε εδώ για να το αναλάβουμε.'}`
     }
 ];
 

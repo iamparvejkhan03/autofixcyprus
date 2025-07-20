@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { accidentRepair, expertTeam, insuranceClaims, qualityGuarantee, rentalCar } from "../assets";
-import { carTow } from "../assets";
 import { useSelector } from "react-redux";
+import HowItWorks from "./HowItWorks";
+import Marquee from "react-fast-marquee";
 
 function OurServices() {
     const [stopScroll, setStopScroll] = useState(false);
@@ -9,46 +9,145 @@ function OurServices() {
 
     const cardData = [
         {
-            title: `${language === 'en' ? 'Accident Repair' : 'Επισκευή Ατυχήματος'}`,
-            image: accidentRepair,
+            title: `${language === 'en' ? 'Accident Repair & Autobody Work' : 'Επισκευή Ατυχημάτων & Εργασίες Αμαξώματος'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M32,26l-7.5,3.5a5,5,0,0,1-4.2.1L5,20.5a2,2,0,0,1-1-2.6l2.4-5.5" />
+                <path d="M24,31a6,6,0,0,1-2.4-.5L5,21.5a3,3,0,0,1-1.5-4l2.4-5.5a1,1,0,1,1,1.8.8l-2.4,5.5a1,1,0,0,0,.5,1.3L22,29a4,4,0,0,0,3.3-.1l7.5-3.5a1,1,0,0,1,.8,1.8l-7.5,3.5A6,6,0,0,1,24,31Z" />
+
+                <path d="M13,5a5,5,0,0,0-6.6,2.6l-1.5,3.5-.5,1,39.5,17.5a4.8,4.8,0,0,0,6.3-2.4l.2-.4a4.8,4.8,0,0,0-2.4-6.3l-26.3-11.6Z" />
+                <path d="M46,31h0a5.7,5.7,0,0,1-2.3-.5L8,13l2.4-5.5a6,6,0,0,1,7.9-3.1l35,15.4a5.8,5.8,0,0,1,3,7.6l-.2.4A5.8,5.8,0,0,1,46,31ZM8,12l38.6,17a3.8,3.8,0,0,0,1.5.3h0a3.8,3.8,0,0,0,3.5-2.3l.2-.4a3.8,3.8,0,0,0-1.9-5L13,6a4,4,0,0,0-3.7,2.4Z" />
+
+                <circle cx="44" cy="13" r="4" />
+                <path d="M44,13a4,4,0,1,1-3.6,2.4,4,4,0,0,1,3.6-2.4m0-2h0a6,6,0,1,0,2.4.5,6,6,0,0,0-2.4-.5Z" />
+
+                <circle cx="18" cy="2" r="4" />
+                <path d="M18,2a4,4,0,1,1-3.6,2.4,4,4,0,0,1,3.6-2.4m0-2h0a6,6,0,1,0,2.4.5,6,6,0,0,0-2.4-.5Z" />
+
+                <path d="M32,18a1,1,0,0,1-.4-.1l-2.7-1.2a1,1,0,1,1,.8-1.8l2.7,1.2a1,1,0,0,1-.4,1.9Z" />
+
+                <path d="M63,31H1a1,1,0,0,1,0-2H63a1,1,0,0,1,0,2Z" />
+            </svg>,
             description: `${language === 'en'
-                ? 'Professional bodywork, dent repair, and paint restoration to get your car looking like new.'
-                : 'Επαγγελματική φανοποιία, επισκευή βαθουλωμάτων και αποκατάσταση βαφής για να δείχνει το αυτοκίνητό σας σαν καινούργιο.'}`
+                ? 'We restore vehicles after crashes or damage — including dents, panel repairs, and full body restoration.'
+                : 'Αποκαθιστούμε οχήματα μετά από ατυχήματα ή ζημιές — συμπεριλαμβανομένων βαθουλωμάτων, επισκευών πάνελ και πλήρους αποκατάστασης αμαξώματος.'}`
         },
         {
-            title: `${language === 'en' ? 'Insurance Claims' : 'Ασφαλιστικών Απαιτήσεων'}`,
-            image: insuranceClaims,
+            title: `${language === 'en' ? 'Paint & Scratch Repair' : 'Επισκευή Βαφής & Γρατζουνιών'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M506.2,476.3l-21.8-139.9V243.1c0-17.1-13.9-30.9-30.9-30.9h-78.7c-15.6,0-28.5,11.5-30.6,26.5h-18.6
+        c-2.5-15-15.5-26.5-31.2-26.5H243.1v-28.5c14.2-8,27.2-20.6,38.2-37.2c18.6-28,30.7-66,33.9-107c0.8-10.1-2.7-20.2-9.6-27.7
+        C298.7,4.3,288.9,0,278.7,0H131.1c-10.2,0-20,4.3-26.9,11.8c-6.9,7.5-10.4,17.6-9.6,27.7c3.2,41,15.2,79,33.9,107
+        c11.1,16.6,24.1,29.2,38.2,37.2v28.5h-39.5c-17.4,0-31.6,14.2-31.6,31.6v19.7H22.2c-9.3,0-16.8,7.5-16.8,16.8s7.5,16.8,16.8,16.8
+        h73.4v19.7c0,17.4,14.2,31.6,31.6,31.6h60.6l-0.3,20.4l-34.1,49.2c-5.3,7.6-3.4,18.1,4.2,23.4c7.6,5.3,18.1,3.4,23.4-4.2
+        l37.1-53.5c1.9-2.7,2.9-6,3-9.3l0.4-26h72.8c15.7,0,28.7-11.5,31.2-26.5h18.3v8.4l-22.9,145.9c-1.4,8.9,1.2,18,7,24.9
+        c5.9,6.9,14.5,10.9,23.5,10.9h124.1c9.1,0,17.6-3.9,23.5-10.8C505,494.3,507.6,485.2,506.2,476.3z M128.2,36.8
+        c-0.1-0.8,0.2-1.7,0.8-2.3c0.6-0.6,1.4-1,2.2-1h147.6c0.8,0,1.6,0.4,2.2,1c0.6,0.6,0.8,1.4,0.8,2.3
+        c-3.6,46.3-25.8,114.7-69.2,122.9c-5,1-10.1,1-15.1,0c-0.1,0-0.1,0-0.2,0C160.3,152.4,132.9,96.6,128.2,36.8z M209.5,193.9v18.2
+        h-9v-18.2C203.2,194.1,206.4,194.1,209.5,193.9z M292.4,255.5v49.6v9.7H129.3v-69c3.2,0,158.2,0,163.1,0V255.5z M343.8,288.3h-17.8
+        v-16h17.8V288.3z M354.6,478.4l22.6-144.2c0.3-1.8,0.2,4.5,0.2-88.4h73.3c0,99.5-0.1,92.6,0.2,94.5l21.6,138.1H354.6z"/>
+            </svg>
+            ,
             description: `${language === 'en'
-                ? 'We handle all insurance paperwork and communication to make the process stress-free for you.'
-                : 'Αναλαμβάνουμε όλη τη γραφειοκρατία και την επικοινωνία με την ασφαλιστική για να κάνουμε τη διαδικασία όσο το δυνατόν πιο ανώδυνη για εσάς.'}`
+                ? 'Professional color-matched painting, polishing, and surface correction for a factory-quality finish.'
+                : 'Επαγγελματική βαφή με αντιστοίχιση χρώματος, γυάλισμα και επιδιόρθωση επιφανειών για φινίρισμα εργοστασιακής ποιότητας.'}`
         },
         {
-            title: `${language === 'en' ? 'Pickup & Delivery' : 'Παραλαβή & Παράδοση'}`,
-            image: carTow,
+            title: `${language === 'en' ? 'Insurance Claim Assistance' : 'Υποστήριξη Ασφαλιστικής Αποζημίωσης'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>,
             description: `${language === 'en'
-                ? 'Free car collection from your location and delivery when the repair is complete.'
-                : 'Δωρεάν παραλαβή του αυτοκινήτου από τον χώρο σας και παράδοση μετά την ολοκλήρωση της επισκευής.'}`
+                ? 'We handle everything with your insurance — from paperwork and approvals to full coordination.'
+                : 'Αναλαμβάνουμε τα πάντα με την ασφαλιστική σας — από τη γραφειοκρατία και τις εγκρίσεις έως τον πλήρη συντονισμό.'}`
         },
         {
-            title: `${language === 'en' ? 'Car Replacement' : 'Αντικατάστασης Αυτοκινήτου'}`,
-            image: rentalCar,
+            title: `${language === 'en' ? 'Pickup, Delivery & Replacement Car' : 'Παραλαβή, Παράδοση & Αυτοκίνητο Αντικατάστασης'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2" />
+                <circle cx="7" cy="17" r="2" />
+                <path d="M9 17h6" />
+                <circle cx="17" cy="17" r="2" />
+            </svg>
+            ,
             description: `${language === 'en'
-                ? 'Get a replacement vehicle while your car is being repaired so you can continue your daily routine.'
-                : 'Παρέχουμε όχημα αντικατάστασης κατά τη διάρκεια της επισκευής ώστε να συνεχίσετε κανονικά την καθημερινότητά σας.'}`
+                ? 'Free pickup and return for your vehicle. Need a car while yours is being repaired? We’ll provide one.'
+                : 'Δωρεάν παραλαβή και επιστροφή του οχήματός σας. Χρειάζεστε αυτοκίνητο όσο το δικό σας επισκευάζεται; Θα σας παρέχουμε ένα.'}`
         },
         {
-            title: `${language === 'en' ? 'Expert Team' : 'Έμπειρη Ομάδα'}`,
-            image: expertTeam,
+            title: `${language === 'en' ? '3-Year Quality Guarantee' : 'Εγγύηση Ποιότητας 3 Ετών'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="#3B82F6"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 64 64"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M40.4,20.57a1.009,1.009,0,0,0-.95-.69H34.48l-1.53-4.72a1,1,0,0,0-1.9,0l-1.53,4.72H24.55a1.009,1.009,0,0,0-.95.69.991.991,0,0,0,.37,1.12l4.01,2.92-1.53,4.72a1,1,0,0,0,.36,1.12,1.022,1.022,0,0,0,1.18,0L32,27.53l4.01,2.92a1.086,1.086,0,0,0,.59.19,1.036,1.036,0,0,0,.59-.19,1,1,0,0,0,.36-1.12l-1.53-4.72,4.01-2.92A.991.991,0,0,0,40.4,20.57Zm-6.14,2.85a1.006,1.006,0,0,0-.37,1.12l.81,2.48-2.11-1.54a1.011,1.011,0,0,0-1.18,0L29.3,27.02l.81-2.48a1.006,1.006,0,0,0-.37-1.12l-2.11-1.54h2.61a.991.991,0,0,0,.95-.69L32,18.71l.81,2.48a.991.991,0,0,0,.95.69h2.61Z" />
+
+                <path d="M32,10.26a13.239,13.239,0,0,0-1.13,26.43c.38.03.75.05,1.13.05.34,0,.69-.02,1.03-.05h.1v-.01A13.234,13.234,0,0,0,32,10.26Zm9.81,18.72a.01.01,0,0,0-.01.01,11.191,11.191,0,0,1-8.85,5.7l-.01.01h-.01a9.1,9.1,0,0,1-1.88-.01,11.236,11.236,0,1,1,10.76-5.71Z" />
+
+                <path d="M58.88,52.73,55.12,46.9q-4.035-6.225-8.06-12.47c.21-.08.45-.17.69-.25a4.179,4.179,0,0,0,2.67-1.8,4.179,4.179,0,0,0-.25-3.19,4.06,4.06,0,0,1-.37-1.63,3.96,3.96,0,0,1,1.01-1.25,4.234,4.234,0,0,0,1.64-2.81,4.19,4.19,0,0,0-1.64-2.8,4.091,4.091,0,0,1-1.01-1.26,4.06,4.06,0,0,1,.37-1.63,4.157,4.157,0,0,0,.25-3.18,4.2,4.2,0,0,0-2.67-1.8,4.218,4.218,0,0,1-1.49-.71,4.362,4.362,0,0,1-.36-1.61,4.191,4.191,0,0,0-1.15-3,4.2,4.2,0,0,0-3.17-.45,4.081,4.081,0,0,1-1.65,0,4.051,4.051,0,0,1-1.01-1.27,4.212,4.212,0,0,0-2.37-2.23,4.132,4.132,0,0,0-3.02.96A4.143,4.143,0,0,1,32,5.25a4.143,4.143,0,0,1-1.53-.73,4.122,4.122,0,0,0-3.01-.96,4.2,4.2,0,0,0-2.38,2.23,4.2,4.2,0,0,1-1,1.27,4.136,4.136,0,0,1-1.66,0,4.174,4.174,0,0,0-3.16.45,4.164,4.164,0,0,0-1.16,3.01,3.961,3.961,0,0,1-.37,1.6,3.944,3.944,0,0,1-1.47.7,4.226,4.226,0,0,0-2.68,1.8,4.179,4.179,0,0,0,.25,3.19,4.06,4.06,0,0,1,.37,1.63,4.091,4.091,0,0,1-1.01,1.26,4.19,4.19,0,0,0-1.64,2.8,4.234,4.234,0,0,0,1.64,2.81,3.96,3.96,0,0,1,1.01,1.25,4.06,4.06,0,0,1-.37,1.63,4.157,4.157,0,0,0-.25,3.18,4.142,4.142,0,0,0,2.67,1.8c.23.09.47.17.69.26Q12.905,40.67,8.88,46.9L5.12,52.73a.981.981,0,0,0,.01,1.1.992.992,0,0,0,1.01.42l6.83-1.27,1.66,6.76a1,1,0,0,0,.81.74.875.875,0,0,0,.16.02.985.985,0,0,0,.84-.46L27.22,43.35c.08.02.15.07.23.09a2.2,2.2,0,0,0,.5.06,5.009,5.009,0,0,0,2.52-1.02A4.143,4.143,0,0,1,32,41.75a4.143,4.143,0,0,1,1.53.73,4.1,4.1,0,0,0,3.03.96c.08-.02.15-.07.22-.09L47.56,60.04a.985.985,0,0,0,.84.46.875.875,0,0,0,.16-.02,1,1,0,0,0,.81-.74l1.66-6.76,6.83,1.27a1,1,0,0,0,1.01-.42A.981.981,0,0,0,58.88,52.73ZM16.02,57l-1.33-5.41a1,1,0,0,0-1.15-.75L8.06,51.86l2.5-3.87q3.75-5.82,7.52-11.64a.784.784,0,0,1,.02.14,4.191,4.191,0,0,0,1.15,3,4.205,4.205,0,0,0,3.17.45,4.081,4.081,0,0,1,1.65,0,3.935,3.935,0,0,1,1.01,1.27c.19.29.38.58.58.86ZM36.4,41.29a.7.7,0,0,1-.3.2c-.28.06-1.02-.39-1.5-.7A5.071,5.071,0,0,0,32,39.75a5.071,5.071,0,0,0-2.6,1.04c-.48.31-1.22.77-1.49.71a.828.828,0,0,1-.32-.22,6.488,6.488,0,0,1-.81-1.13,5.026,5.026,0,0,0-1.83-2.01,3.246,3.246,0,0,0-1.45-.29,11.376,11.376,0,0,0-1.3.1c-.62.07-1.46.17-1.7-.02s-.34-1.04-.41-1.66a5.025,5.025,0,0,0-.79-2.64,1.7,1.7,0,0,0-.27-.27,1.249,1.249,0,0,0-.12-.09l-.01-.01h-.01a6.3,6.3,0,0,0-1.98-.97c-.59-.21-1.39-.49-1.53-.79-.14-.28.14-1.07.34-1.65a4.932,4.932,0,0,0,.43-2.73,4.848,4.848,0,0,0-1.55-2.23c-.44-.44-1.05-1.05-1.05-1.39s.61-.95,1.05-1.39a4.848,4.848,0,0,0,1.55-2.23,4.932,4.932,0,0,0-.43-2.73c-.2-.58-.48-1.37-.34-1.66s.95-.57,1.54-.78a4.864,4.864,0,0,0,2.37-1.34,4.91,4.91,0,0,0,.8-2.63c.07-.62.16-1.46.41-1.66s1.08-.1,1.7-.03a5.007,5.007,0,0,0,2.75-.19,4.956,4.956,0,0,0,1.83-2.01c.33-.54.79-1.27,1.12-1.34.28-.07,1.02.4,1.5.7A5.071,5.071,0,0,0,32,7.25a5.071,5.071,0,0,0,2.6-1.04c.48-.3,1.21-.76,1.5-.7.33.07.79.8,1.12,1.34a4.956,4.956,0,0,0,1.83,2.01,5.007,5.007,0,0,0,2.75.19c.62-.07,1.46-.17,1.7.02s.34,1.04.41,1.66a5.025,5.025,0,0,0,.79,2.64,5.024,5.024,0,0,0,2.39,1.35c.59.2,1.39.48,1.53.78.14.28-.14,1.07-.34,1.65a4.932,4.932,0,0,0-.43,2.73,4.848,4.848,0,0,0,1.55,2.23c.44.44,1.05,1.05,1.05,1.39s-.61.95-1.05,1.39a4.848,4.848,0,0,0-1.55,2.23,4.932,4.932,0,0,0,.43,2.73c.2.58.48,1.37.34,1.66s-.95.58-1.53.78a6.074,6.074,0,0,0-2.07,1.02,3.107,3.107,0,0,0-.31.32,4.91,4.91,0,0,0-.8,2.63c-.07.62-.16,1.46-.41,1.66s-1.08.1-1.7.03a4.916,4.916,0,0,0-2.75.19,5.026,5.026,0,0,0-1.83,2.01A6.464,6.464,0,0,1,36.4,41.29Zm14.06,9.55a1,1,0,0,0-1.15.75L47.98,57,38.34,42.07c.2-.28.39-.57.58-.86a4.07,4.07,0,0,1,1-1.27,4.136,4.136,0,0,1,1.66,0,4.174,4.174,0,0,0,3.16-.45,4.157,4.157,0,0,0,1.16-3,.675.675,0,0,1,.02-.14q3.765,5.82,7.52,11.64l2.5,3.87Z" />
+            </svg>,
             description: `${language === 'en'
-                ? 'Certified technicians with years of experience in accident and collision repair.'
-                : 'Πιστοποιημένοι τεχνικοί με πολυετή εμπειρία σε επισκευές ατυχημάτων και συγκρούσεων.'}`
+                ? 'Every repair is backed by a written 3-year warranty for workmanship and materials — your peace of mind, guaranteed.'
+                : 'Κάθε επισκευή συνοδεύεται από γραπτή εγγύηση 3 ετών για την εργασία και τα υλικά — η σιγουριά σας, εγγυημένη.'}`
         },
         {
-            title: `${language === 'en' ? 'Quality Guarantee' : 'Εγγύηση Ποιότητας'}`,
-            image: qualityGuarantee,
+            title: `${language === 'en' ? 'Mechanical Services' : 'Μηχανολογικές Υπηρεσίες'}`,
+            icon: <svg
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
+                fill="currentColor"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M426.24 30c-13.635.02-38.617 9.837-47.707 20H68.24c-32 0-32 64 0 64h310.301c9.088 10.16 34.067 19.978 47.7 20 17.123-.025 32.937-13.17 41.5-28h-39.5l-22-24 22-24h39.519c-8.565-14.835-24.39-27.982-41.52-28zm-342 36c8.837 0 16 7.163 16 16s-7.163 16-16 16c-8.836 0-16-7.163-16-16s7.164-16 16-16zm75.77 117c-8 0-13.83 4.038-20.166 8.813-6.336 4.774-12.98 10.944-20.041 17.67-13.752 13.096-29.103 28.29-43.608 38.218l45.407 1.135c11.17-20.948 18.277-40.386 38.408-47.836h71v50.572l18 .45V201h23c11.5 0 30.948 10.484 50.377 26.027 10.483 8.387 21.064 18.01 31.117 27.608l49.611 1.24 49.729-58.018-13.668-11.714-59.237 69.109c-13.952-13.825-29.952-29.196-46.306-42.28C313.06 196.517 292.51 183 272.01 183h-112zM47.986 265.004c-4.995.008-11.034 2.78-15.613 7.36C27.787 276.948 25.01 283 25.01 288c0 13 7.276 32.26 16.633 47.23 4.355 6.97 9.123 13.056 13.38 17.313-.001-.182-.013-.36-.013-.543 0-31.374 25.626-57 57-57 31.373 0 57 25.626 57 57 0 2.37-.163 4.704-.447 7h190.894a56.952 56.952 0 0 1-.447-7c0-31.374 25.626-57 57-57 31.373 0 57 25.626 57 57 0 2.37-.163 4.704-.447 7h9.392l5.035-45.326c-.106-12.823-6.276-21.985-14.603-28.647-8.4-6.72-19.377-10.027-24.377-10.027h-.114l-399.91-9.996zM112.01 313c-21.646 0-39 17.354-39 39s17.354 39 39 39c21.645 0 39-17.354 39-39s-17.355-39-39-39zm304 0c-21.646 0-39 17.354-39 39s17.354 39 39 39c21.645 0 39-17.354 39-39s-17.355-39-39-39zm-215 64v14h110v-14h-110zm48 32v46h14v-46h-14zm-35.438 64l-7 14h98.875l-7-14h-84.875z" />
+            </svg>,
             description: `${language === 'en'
-                ? 'All repairs come with our quality guarantee for your peace of mind.'
-                : 'Όλες οι επισκευές συνοδεύονται από εγγύηση ποιότητας για τη δική σας σιγουριά.'}`
+                ? 'Expert repairs including brakes, diagnostics, suspension and minor servicing — all handled by certified technicians.'
+                : 'Εξειδικευμένες επισκευές όπως φρένα, διαγνωστικοί έλεγχοι, ανάρτηση και βασική συντήρηση — όλες πραγματοποιούνται από πιστοποιημένους τεχνικούς.'}`
         }
     ];
 
@@ -73,13 +172,11 @@ function OurServices() {
 
             <div className="overflow-hidden w-full relative max-w-full mx-auto mt-8" onMouseEnter={() => setStopScroll(true)} onMouseLeave={() => setStopScroll(false)}>
                 <div className="absolute left-0 top-0 h-full w-5 z-10 pointer-events-none bg-gradient-to-r from-white to-transparent" />
-                <div className="marquee-inner flex w-fit" style={{ animationPlayState: stopScroll ? "paused" : "running", animationDuration: cardData.length * 5000 + "ms" }}>
+                {/* <div className="marquee-inner flex w-fit" style={{ animationPlayState: stopScroll ? "paused" : "running", animationDuration: cardData.length * 5000 + "ms" }}>
                     <div className="flex">
                         {[...cardData, ...cardData].map((card, index) => (
                             <div key={index} className="w-64 mx-4 h-[20rem] relative group hover:scale-90 transition-all duration-300 rounded overflow-hidden">
                                 <p className="text-white text-lg font-semibold text-center absolute bottom-0 left-0 right-0 z-10 bg-black/50 p-1">{card.title}</p>
-
-                                {/* <div className="bg-black/10 absolute bottom-0 left-0 right-0 top-0"></div> */}
 
                                 <img src={card.image} alt="card" className="w-full h-full object-cover " />
 
@@ -88,6 +185,31 @@ function OurServices() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div> */}
+
+                <div className="overflow-hidden py-4">
+                    <div
+                        className="marquee-inner"
+                        style={{ animationPlayState: stopScroll ? "paused" : "running" }}
+                    >
+                        <Marquee
+                            speed={50}
+                            gradient={false}
+                            pauseOnHover
+                        >
+                            <div className="flex items-stretch gap-8 px-4">
+                                {cardData.map((card) => (
+                                    <div key={card.title} className="flex-shrink-0 w-[300px]">
+                                        <HowItWorks
+                                            title={card.title}
+                                            description={card.description}
+                                            icon={card.icon}
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </Marquee>
                     </div>
                 </div>
                 <div className="absolute right-0 top-0 h-full w-5 md:w-5 z-10 pointer-events-none bg-gradient-to-l from-white to-transparent" />

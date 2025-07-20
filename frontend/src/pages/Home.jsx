@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { banner, beforeAfterCarRepair, faqImg, Restoration, sidePanel } from "../assets";
+import { beforeAfterCarRepair, faqImg, Restoration, sidePanel } from "../assets";
 import { CallToAction, Card, Container, Faq, Hero, HowItWorks, OurServices, Testimonial, TrustedInsurancePartners, WhyChooseUs } from "../components";
 import Marquee from "react-fast-marquee";
 
@@ -45,9 +45,9 @@ function Home() {
         {
             name: `${language === 'en' ? 'Avery Johnson' : 'Έιβερι Τζόνσον'}`,
             review: `${language === 'en'
-                ? 'At first I was unsure, but they won me over. No surprise costs, great service, and my AC works like new!'
-                : 'Ήμουν διστακτικός, αλλά με έπεισαν. Καμία κρυφή χρέωση, εξαιρετική εξυπηρέτηση και το AC λειτουργεί τέλεια!'}`,
-            location: `${language === 'en' ? 'Nicosia' : 'Λευκωσία'}`
+                ? 'After my accident, AutoFix Cyprus picked up my car, and handled the insurance. No stress, no calls. I wouldn’t trust anyone else.'
+                : 'Μετά το ατύχημά μου, η AutoFix Cyprus παρέλαβε το αυτοκίνητό μου και ανέλαβε την ασφάλεια. Χωρίς άγχος, χωρίς τηλεφωνήματα. Δεν θα εμπιστευόμουν κανέναν άλλον.'}`,
+            location: `${language === 'en' ? 'Limassol' : 'Λεμεσός'}`
         },
         {
             name: `${language === 'en' ? 'Christos Antoniou' : 'Χρίστος Αντωνίου'}`,
@@ -75,37 +75,37 @@ function Home() {
             review: `${language === 'en'
                 ? "Excellent communication and fair prices. They clearly explained everything before starting. I trust them completely with my car!"
                 : 'Εξαιρετική επικοινωνία και δίκαιες τιμές. Μου εξήγησαν ξεκάθαρα όλα πριν ξεκινήσουν. Τους εμπιστεύομαι πλήρως με το αυτοκίνητό μου!'}`,
-            location: `${language === 'en' ? 'Famagusta' : 'Αμμόχωστος'}`
+            location: `${language === 'en' ? 'Limassol' : 'Λεμεσός'}`
         },
     ];
 
     const faqs = [
         {
-            question: `${language === 'en' ? '❓ I had an accident. What should I do?' : '❓ Είχα ένα ατύχημα. Τι πρέπει να κάνω;'}`,
+            question: `${language === 'en' ? 'I had an accident. What should I do?' : 'Είχα ένα ατύχημα. Τι πρέπει να κάνω;'}`,
             answer: `${language === 'en'
-                ? '📞 Call us or send us a photo. From there, we handle everything.'
-                : '📞 Καλέστε μας ή στείλτε μας μια φωτογραφία. Από εκεί και πέρα, αναλαμβάνουμε τα πάντα.'}`
+                ? 'Call us or send us a photo. From there, we handle everything.'
+                : 'Καλέστε μας ή στείλτε μας μια φωτογραφία. Από εκεί και πέρα, αναλαμβάνουμε τα πάντα.'}`
         },
         {
-            question: `${language === 'en' ? '❓ What services do you offer?' : '❓ Τι υπηρεσίες προσφέρετε;'}`,
+            question: `${language === 'en' ? 'What services do you offer?' : 'Τι υπηρεσίες προσφέρετε;'}`,
             answer: `${language === 'en'
                 ? 'We take care of the entire process: towing, insurance, repair, and returning your car ready at your doorstep.'
                 : 'Αναλαμβάνουμε όλη τη διαδικασία: ρυμούλκηση, ασφάλεια, επισκευή και επιστροφή του αυτοκινήτου σας έτοιμου στην πόρτα σας.'}`
         },
         {
-            question: `${language === 'en' ? '❓ Can I get a replacement car?' : '❓ Μπορώ να έχω αυτοκίνητο αντικατάστασης;'}`,
+            question: `${language === 'en' ? 'Can I get a replacement car?' : 'Μπορώ να έχω αυτοκίνητο αντικατάστασης;'}`,
             answer: `${language === 'en'
                 ? 'Yes. We provide a replacement car for an additional fee if you need it.'
                 : 'Ναι. Παρέχουμε αυτοκίνητο αντικατάστασης με επιπλέον χρέωση αν το χρειάζεστε.'}`
         },
         {
-            question: `${language === 'en' ? '❓ If it was my fault, can I still call you?' : '❓ Αν έφταιγα εγώ, μπορώ ακόμα να σας καλέσω;'}`,
+            question: `${language === 'en' ? 'If it was my fault, can I still call you?' : 'Αν έφταιγα εγώ, μπορώ ακόμα να σας καλέσω;'}`,
             answer: `${language === 'en'
                 ? 'Of course. Whether you\'re at fault or not, we will fully assist you.'
                 : 'Φυσικά. Είτε φταίγατε είτε όχι, θα σας βοηθήσουμε πλήρως.'}`
         },
         {
-            question: `${language === 'en' ? '❓ Do I pay anything upfront?' : '❓ Πληρώνω κάτι προκαταβολικά;'}`,
+            question: `${language === 'en' ? 'Do I pay anything upfront?' : 'Πληρώνω κάτι προκαταβολικά;'}`,
             answer: `${language === 'en'
                 ? 'No. The initial consultation and damage assessment are completely free.'
                 : 'Όχι. Η αρχική αξιολόγηση και η εκτίμηση της ζημιάς είναι εντελώς δωρεάν.'}`
@@ -122,7 +122,7 @@ function Home() {
         },
         {
             image: sidePanel,
-            title: `${language === 'en' ? 'Side Panel & Scratch Restoration' : 'Αποκατάσταση Πλαϊνού Πάνελ & Γρατζουνιών'}`,
+            title: `${language === 'en' ? 'Side Panel Restoration' : 'Αποκατάσταση Πλαϊνού Πάνελ'}`,
             description: `${language === 'en'
                 ? 'Quick scratch removal and surface refinishing to factory condition, fast.'
                 : 'Άμεση αφαίρεση γρατζουνιών και επαναφορά πάνελ σε εργοστασιακή κατάσταση, γρήγορα.'}`
@@ -139,7 +139,7 @@ function Home() {
     const trustUs = [
         {
             icon: <svg
-                className="w-8 h-8 text-blue-500 group-hover:text-white transition-colors duration-300"
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -155,7 +155,7 @@ function Home() {
         },
         {
             icon: <svg
-                className="w-8 h-8 text-blue-500 group-hover:text-white transition-colors duration-300"
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -168,11 +168,11 @@ function Home() {
                 <polyline points="12 6 12 12 16 14"></polyline>
             </svg>,
             title: `${language === 'en' ? 'Quick Response' : 'Γρήγορη Ανταπόκριση'}`,
-            description: `${language === 'en' ? 'We response within 2 hours and start work the same day.' : 'Ανταποκρινόμαστε εντός 2 ωρών και ξεκινάμε την εργασία την ίδια μέρα.'}`
+            description: `${language === 'en' ? 'We response within 1 hours and start work the same day.' : 'Ανταποκρινόμαστε εντός 1 ωρών και ξεκινάμε την εργασία την ίδια μέρα.'}`
         },
         {
             icon: <svg
-                className="w-8 h-8 text-blue-500 group-hover:text-white transition-colors duration-300"
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -188,7 +188,7 @@ function Home() {
         },
         {
             icon: <svg
-                className="w-8 h-8 text-blue-500 group-hover:text-white transition-colors duration-300"
+                className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
@@ -201,7 +201,7 @@ function Home() {
                 <path d="M9 12l2 2 4-4"></path>
             </svg>,
             title: `${language === 'en' ? 'Quality Guarantee' : 'Εγγύηση Ποιότητας'}`,
-            description: `${language === 'en' ? '1-year warranty on all repair work with satisfaction gurantee.' : 'Εγγύηση 1 έτους για όλες τις εργασίες επισκευής με εγγύηση ικανοποίησης.'}`
+            description: `${language === 'en' ? '3-year warranty on all repair work with satisfaction gurantee.' : 'Εγγύηση 3 έτους για όλες τις εργασίες επισκευής με εγγύηση ικανοποίησης.'}`
         },
     ];
 
@@ -273,10 +273,10 @@ function Home() {
             <section>
                 <Container>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        {language === 'en' ? 'See Our Work in Action' : 'Δείτε τη Δουλειά μας σε Δράση'}
+                        {language === 'en' ? 'Accident Repairs – Before & After' : 'Επισκευές Ατυχημάτων – Πριν & Μετά'}
                     </h2>
                     <p className="text-sm md:text-base text-gray-500 mt-3">
-                        {language === 'en' ? "Professional results that speak for themselves. Here's how we transform damaged vehicles back to their original condition." : 'Επαγγελματικά αποτελέσματα που μιλούν από μόνα τους. Δείτε πώς μεταμορφώνουμε τα κατεστραμμένα οχήματα στην αρχική τους κατάσταση.'}
+                        {language === 'en' ? "See how we restore damage from real accidents — with speed, precision, and trust." : 'Δείτε πώς αποκαθιστούμε ζημιές από πραγματικά ατυχήματα — με ταχύτητα, ακρίβεια και αξιοπιστία.'}
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-between items-center mt-7 gap-8">
@@ -293,10 +293,10 @@ function Home() {
             <section className="mt-14">
                 <Container>
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                        {language === 'en' ? 'Why Cyprus Trust Us' : 'Γιατί μας εμπιστεύεται η Κύπρος'}
+                        {language === 'en' ? 'Why People Trust AutoFix Cyprus' : 'Γιατί ο κόσμος εμπιστεύεται την AutoFix Cyprus'}
                     </h2>
                     <p className="text-sm md:text-base text-gray-500 mt-3">
-                        {language === 'en' ? 'Over 15 years of experience serving Cyprus with professional car repair services.' : 'Πάνω από 15 χρόνια εμπειρίας προσφέροντας επαγγελματικές υπηρεσίες επισκευής αυτοκινήτων στην Κύπρο.'}
+                        {language === 'en' ? 'From seamless accident handling to reliable repairs, we’ve earned the trust of drivers across Cyprus.' : 'Από την άμεση διαχείριση ατυχημάτων έως τις αξιόπιστες επισκευές, έχουμε κερδίσει την εμπιστοσύνη των οδηγών σε όλη την Κύπρο.'}
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-between items-center mt-10 gap-8">
@@ -332,10 +332,10 @@ function Home() {
             {/* Our Services section */}
             <Container className="mt-14">
                 <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-                    {language === 'en' ? 'Our Services' : 'Οι Υπηρεσίες μας'}
+                    {language === 'en' ? 'Our Core Services' : 'Οι Κύριες Υπηρεσίες μας'}
                 </h2>
                 <p className="text-sm md:text-base text-gray-500 mt-3">
-                    {language === 'en' ? 'Complete car repair solutions for accident damage.' : 'Ολοκληρωμένες λύσεις επισκευής αυτοκινήτων για ζημιές από ατύχημα.'}
+                    {language === 'en' ? 'AutoFix Cyprus – Total care from accident to completion.' : 'AutoFix Cyprus – Πλήρης φροντίδα από το ατύχημα μέχρι την ολοκλήρωση.'}
                 </p>
                 <OurServices />
             </Container>
@@ -358,7 +358,7 @@ function Home() {
                         {language === 'en' ? 'Trusted by hundreds—see why drivers choose us to keep their cars running like new.' : 'Εμπιστευμένοι από εκατοντάδες – δείτε γιατί οι οδηγοί μας επιλέγουν για να κρατούν τα αυτοκίνητά τους σαν καινούργια'}
                     </p>
                     <Marquee speed={50} gradient={false}>
-                        <div className="flex flex-wrap justify-between gap-5 mt-8 mx-5 text-left">
+                        <div className="flex flex-wrap justify-between items-stretch gap-5 mt-8 mx-5 text-left">
                             {
                                 testimonials.map(testimonial => (
                                     <Testimonial key={testimonial.name} name={testimonial.name} review={testimonial.review} location={testimonial.location} />

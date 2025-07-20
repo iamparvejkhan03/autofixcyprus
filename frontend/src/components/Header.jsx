@@ -1,7 +1,7 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Container, LanguageSwitcher } from "./";
 import { useEffect, useState } from "react";
-import { closeIcon, menuIcon } from "../assets";
+import { closeIcon, logo, menuIcon } from "../assets";
 import { useSelector } from "react-redux";
 
 function Header() {
@@ -32,13 +32,9 @@ function Header() {
     }, [pathname])
     return (
         <header className="w-full fixed top-0 left-0 z-40">
-            <Container className={`flex justify-between py-5 ${isScrolled && 'shadow-lg bg-white'}`}>
+            <Container className={`flex items-center justify-between py-5 ${isScrolled && 'shadow-lg bg-white'}`}>
                 <Link to='/' className="flex gap-2 z-50">
-                    <div data-lov-id="src/components/Navbar.tsx:24:12" data-lov-name="div" data-component-path="src/components/Navbar.tsx" data-component-line="24" data-component-file="Navbar.tsx" data-component-name="div" data-component-content="%7B%22className%22%3A%22w-8%20h-8%20bg-blue-600%20rounded-lg%20flex%20items-center%20justify-center%22%7D" className="w-7 h-7 sm:w-8 sm:h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-car w-4 h-4 sm:w-5 sm:h-5 text-white" data-lov-id="src/components/Navbar.tsx:25:14" data-lov-name="Car" data-component-path="src/components/Navbar.tsx" data-component-line="25" data-component-file="Navbar.tsx" data-component-name="Car" data-component-content="%7B%22className%22%3A%22w-5%20h-5%20text-white%22%7D"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
-                    </div>
-
-                    <h2 className="text-lg lg:text-2xl font-bold">AutoFix Cyprus</h2>
+                    <img src={logo} alt="logo" className="h-8" />
                 </Link>
 
                 <nav className="hidden lg:block">

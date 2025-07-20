@@ -83,7 +83,7 @@ function WhyChooseUs() {
                 </div>
                 <div className="relative">
                     <img src={whyChooseUs} alt="Professional garage with modern equipment" className="rounded-2xl shadow-2xl w-full" />
-                        <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+                        <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg hidden sm:block">
                             <div className="text-center">
                                 <div className="text-3xl font-bold text-blue-600">500+</div>
                                 <div className="text-sm text-gray-500">

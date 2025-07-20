@@ -29,6 +29,7 @@ function Contact() {
                 setSending(false);
                 toast.success(data.message);
                 reset();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }else{
                 toast.error(data.message);
             }

@@ -27,7 +27,7 @@ function CallToAction(){
                 
                 <div className="flex gap-3 flex-wrap items-center justify-center">
                     <button onClick={() => navigate('/request-repair')} type="button" className="bg-blue-600 text-white text-sm px-5 py-2.5 rounded-md cursor-pointer font-medium mt-4 hover:scale-105 active:scale-95 transition-all duration-300 inline-flex"> 
-                    {language === 'en' ? 'Book a Repair' : 'Κλείστε μια Επισκευή'}
+                    {language === 'en' ? 'Get Started' : 'Ξεκινήστε'}
 
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-car ml-2 w-5 h-5" data-lov-id="src/components/Hero.tsx:33:18" data-lov-name="Car" data-component-path="src/components/Hero.tsx" data-component-line="33" data-component-file="Hero.tsx" data-component-name="Car" data-component-content="%7B%22className%22%3A%22ml-2%20w-5%20h-5%22%7D"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
                     </button>
@@ -40,7 +40,7 @@ function CallToAction(){
                 </div>
 
                 <p className="text-gray-400 mt-2 max-w-5xl max-md:text-sm">
-                    {language === 'en' ? 'Free consultation • No obligation • Response within 2 hours' : 'Δωρεάν συμβουλευτική • Χωρίς υποχρέωση • Απάντηση εντός 2 ωρών'}
+                    {language === 'en' ? 'Free consultation • No obligation • Response within 1 hours' : 'Δωρεάν συμβουλευτική • Χωρίς υποχρέωση • Απάντηση εντός 1 ώρα'}
                 </p>
             </div>
         </section>

@@ -84,7 +84,7 @@ function Contact() {
                                         </h3>
                                         <Link to='mailto:support@autofixcyprus.com' className="text-gray-600 break-all hover:underline">support@autofixcyprus.com</Link>
                                         <p className="text-sm text-gray-500">
-                                            {language === 'en' ? 'We respond within 2 hours' : 'Απαντάμε εντός 2 ωρών'}
+                                            {language === 'en' ? 'We respond within 1 hour' : 'Απαντάμε εντός 1 ώρα'}
                                         </p>
                                     </div>
                                 </div>

@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import Container from "./Container";
 import { useSelector } from "react-redux";
-import { logo } from "../assets";
+import { lightLogo } from "../assets";
 
 
 function Footer() {
@@ -28,7 +28,7 @@ function Footer() {
                 <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
                     <div className='max-w-80'>
                         <Link to='/' className="flex gap-2 z-50 mb-4">
-                            <img src={logo} alt="logo" className="h-8" />
+                            <img src={lightLogo} alt="logo" className="h-8" />
                         </Link>
                         <p className=''>
                             {language === 'en' ? 'Professional car repair services across Cyprus. We handle everything from accident damage to bodywork restoration with personal attention to detail.' : 'Επαγγελματικές υπηρεσίες επισκευής αυτοκινήτων σε όλη την Κύπρο. Αναλαμβάνουμε τα πάντα, από ζημιές λόγω ατυχήματος μέχρι αποκατάσταση αμαξώματος, με προσωπική προσοχή στη λεπτομέρεια.'}
@@ -94,11 +94,11 @@ function Footer() {
                 </div>
                 <hr className='border-gray-300 mt-8' />
                 <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5'>
-                    <p>© {new Date().getFullYear()} 
+                    <p>© {new Date().getFullYear()} &nbsp;
                         <Link to="/">
                         AutoFix Cyprus
                         </Link>. 
-                        {language === 'en' ? 'All rights reserved.' : 'Όλα τα δικαιώματα διατηρούνται.'}
+                        {language === 'en' ? ' All rights reserved. ' : 'Όλα τα δικαιώματα διατηρούνται.'}
                     </p>
                     <div className='flex items-center gap-3 mt-4'>
                             {/* Instagram */}

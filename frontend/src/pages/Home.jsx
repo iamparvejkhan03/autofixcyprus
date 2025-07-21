@@ -214,7 +214,7 @@ function Home() {
         {
             icon: <span className="text-2xl font-semibold text-blue-500 group-hover:text-white transition-colors duration-300">2</span>,
             title: `${language === 'en' ? 'We Contact You' : 'Θα επικοινωνήσουμε μαζί σας'}`,
-            description: `${language === 'en' ? 'Our team reviews your case and calls you within 2 hours to discuss the repair and provide a quote.' : 'Η ομάδα μας εξετάζει την περίπτωσή σας και σας καλεί εντός 2 ωρών για να συζητήσει την επισκευή και να σας δώσει προσφορά.'}`
+            description: `${language === 'en' ? 'Our team reviews your case and calls you within 1 hour to discuss the repair and provide a quote.' : 'Η ομάδα μας εξετάζει την περίπτωσή σας και σας καλεί εντός 1 ώρα για να συζητήσει την επισκευή και να σας δώσει προσφορά.'}`
         },
         {
             icon: <span className="text-2xl font-semibold text-blue-500 group-hover:text-white transition-colors duration-300">3</span>,

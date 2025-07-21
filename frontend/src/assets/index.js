@@ -8,6 +8,7 @@ import Restoration from './Restoration.jpeg';
 import whyChooseUs from './whyChooseUs.jpeg';
 import logo from './logo.png';
 import favicon from './favicon.png';
+import lightLogo from './lightLogo.png';
 
 export {
     banner,
@@ -20,4 +21,5 @@ export {
     whyChooseUs,
     logo,
     favicon,
+    lightLogo,
 }

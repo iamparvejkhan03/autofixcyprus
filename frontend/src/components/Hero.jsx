@@ -8,10 +8,10 @@ function Hero() {
     const navigate = useNavigate();
 
     return (
-        <section className="flex items-center justify-center min-h-screen relative max-w-full overflow-x-hidden pt-32 md:pt-20 pb-14 md:pb-5">
+        <section className="flex items-center justify-center min-h-screen relative max-w-full overflow-x-hidden pt-32 md:pt-24 pb-14 md:pb-5">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-600/15 to-blue-600/3" />
             <Container className="flex flex-col gap-12 lg:gap-20 z-10 w-full h-full">
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-14 w-full">
+                <div className="flex flex-col lg:flex-row justify-between items-center gap-10 lg:gap-20 w-full">
                     <div className="lg:w-1/2 w-full px-2 flex flex-col items-start justify-between gap-5">
                         <p className={`inline-flex items-center gap-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium`}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-shield w-4 h-4" data-lov-id="src/components/Hero.tsx:15:14" data-lov-name="Shield" data-component-path="src/components/Hero.tsx" data-component-line="15" data-component-file="Hero.tsx" data-component-name="Shield" data-component-content="%7B%22className%22%3A%22w-4%20h-4%22%7D"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
@@ -20,7 +20,7 @@ function Hero() {
                                 language === 'en' ? 'Trusted Car Repair Service In Cyprus' : 'Αξιόπιστο Συνεργείο Αυτοκινήτων στην Κύπρο'
                             }
                         </p>
-                        <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"><span className="text-blue-600">{language === 'en' ? 'AutoFix Cyprus ' : 'Φροντίδα Οχήματος '}</span> {language === 'en' ? '– The Smarter Way to Handle Car Damage' : '– Ο Έξυπνος Τρόπος να Αντιμετωπίσετε τις Ζημιές του Αυτοκινήτου'}.</h1>
+                        <h1 className="text-4xl xl:text-5xl font-bold text-gray-900 leading-tight"><span className="text-blue-600">{language === 'en' ? 'AutoFix Cyprus ' : 'AutoFix Cyprus '}</span> {language === 'en' ? '– The Smarter Way to Handle Car Damage' : '– Ο Έξυπνος Τρόπος να Αντιμετωπίσετε τις Ζημιές του Αυτοκινήτου'}.</h1>
                         <p className="text-lg text-gray-600 leading-relaxed">{language === 'en' ? 'Accident? Dent? Insurance delay? We pick up your car, manage everything, and deliver it back. One call. Total peace of mind.' : 'Ατύχημα; Χτύπημα; Καθυστέρηση από την ασφάλεια; Παραλαμβάνουμε το αυτοκίνητό σας, αναλαμβάνουμε τα πάντα και το παραδίδουμε πίσω. Ένα τηλεφώνημα. Απόλυτη ηρεμία.'}</p>
 
                         <div className="flex gap-4 flex-wrap">

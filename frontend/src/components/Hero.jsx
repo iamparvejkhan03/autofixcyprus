@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { banner } from "../assets";
 import { Container } from "./";
 import { Link, useNavigate } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Hero() {
     const language = useSelector(state => state.language);
@@ -24,10 +25,10 @@ function Hero() {
                         <p className="text-lg text-gray-600 leading-relaxed">{language === 'en' ? 'Accident? Dent? Insurance delay? We pick up your car, manage everything, and deliver it back. One call. Total peace of mind.' : 'Ατύχημα; Χτύπημα; Καθυστέρηση από την ασφάλεια; Παραλαμβάνουμε το αυτοκίνητό σας, αναλαμβάνουμε τα πάντα και το παραδίδουμε πίσω. Ένα τηλεφώνημα. Απόλυτη ηρεμία.'}</p>
 
                         <div className="flex gap-4 flex-wrap">
-                            <button onClick={() => navigate('/request-repair')} className={`inline-flex items-center justify-center whitespace-nowrap h-11 bg-blue-600 hover:bg-blue-700 text-white sm:px-8 ${language === 'gr' ? 'px-10' : 'px-4'} py-4 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl  cursor-pointer`}>
-                                {language === 'en' ? 'Get Started' : 'Ξεκινήστε'}
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-car ml-2 w-5 h-5" data-lov-id="src/components/Hero.tsx:33:18" data-lov-name="Car" data-component-path="src/components/Hero.tsx" data-component-line="33" data-component-file="Hero.tsx" data-component-name="Car" data-component-content="%7B%22className%22%3A%22ml-2%20w-5%20h-5%22%7D"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg>
-                            </button>
+                            <a href="https://wa.me/35799777281" target="_blank" rel="noopener noreferrer" className={`inline-flex items-center justify-center whitespace-nowrap h-11 bg-blue-600 hover:bg-blue-700 text-white sm:px-8 ${language === 'gr' ? 'px-10' : 'px-4'} py-4 text-lg font-semibold rounded-md shadow-lg hover:shadow-xl  cursor-pointer`}>
+                                {language === 'en' ? 'Get Free Estimate' : 'Λάβετε Δωρεάν Εκτίμηση'}
+                                <FaWhatsapp className="w-5 h-5 ml-2 text-green-500" />
+                            </a>
                             <Link to='tel:+35799777281' className={`inline-flex items-center justify-center gap-1 whitespace-nowrap h-11 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white sm:px-8 ${language === 'gr' ? 'px-2' : 'px-6'} py-4 text-lg font-semibold rounded-md transition-all duration-300 cursor-pointer`}>
                                 {language === 'en' ? 'Contact Us' : 'Επικοινωνήστε Μαζί Μας'}
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-phone mr-2 w-4 h-4" data-lov-id="src/components/Hero.tsx:39:18" data-lov-name="Phone" data-component-path="src/components/Hero.tsx" data-component-line="39" data-component-file="Hero.tsx" data-component-name="Phone" data-component-content="%7B%22className%22%3A%22mr-2%20w-5%20h-5%22%7D"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
